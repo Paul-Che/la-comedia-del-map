@@ -8,6 +8,7 @@
 Play.destroy_all
 Actor.destroy_all
 
-Play.create!(start_date: '10/04/2016', end_date: '20/04/2016', synopsys: 'spectacle super sympa')
+Play.create!(start_date: '10/04/2016', end_date: '20/04/2016', synopsys: 'spectacle super sympa', title: 'le retour du roi')
 Actor.create!(first_name: 'paul', last_name: 'chenon', birthday: '15/04/1991', gender: 'male')
+Actor.create!(first_name: 'charlotte', last_name: 'dupont', birthday: '16/04/1991', gender: 'female')
 
