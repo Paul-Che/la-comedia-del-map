@@ -1,5 +1,6 @@
 class Admin::ActorsController < ApplicationController
   def index
+    @actors = Actor.all
   end
 
   def new
