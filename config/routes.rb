@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :plays, only: :show
+
+  namespace "admin" do
+    resources :plays, :actors
+  end
+
 end
