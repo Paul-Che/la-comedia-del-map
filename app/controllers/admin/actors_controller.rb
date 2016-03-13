@@ -8,6 +8,7 @@ class Admin::ActorsController < ApplicationController
   end
 
   def edit
+    set_actor
   end
 
   def create
