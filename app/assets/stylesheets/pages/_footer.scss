@@ -1,0 +1,36 @@
+// Your footer style
+.main-footer {
+  margin-top: 200px;
+  height: 50px;
+  background: #F9F9FA;
+  border-top: 1px solid #EAEAEB;
+  height: 26vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  // position: absolute;
+  width: 100%;
+  bottom: 0;
+  color : $gray;
+  font-size: 12px;
+  left:0px;
+  margin-bottom: 0;
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.social {
+  display: block;
+  background: blue;
+  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 2.13em;
+  color: $gray-lighter;
+  padding-bottom: 6px
+}
+.primary_section{
+  padding: 30px;
+}
