@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="wrapper">
+    <ul>
+      <li><%= link_to 'Ajouter un spectacle', new_admin_play_path %></li>
+      <% @plays.each do |play| %>
+        <div class="card">
+          <ul class='list-unstyled list-inline'>
+            <li><%= play.title %></li>
+            <li><%= link_to 'show', play_path(play) %></li>
+            <li><%= link_to 'edit', edit_admin_play_path(play) %></li>
+            <li><%= link_to 'delete', { action: :destroy, id: play.id }, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

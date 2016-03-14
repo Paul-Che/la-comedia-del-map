@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="wrapper">
+    <%= simple_form_for @play, :url => admin_play_path do |f| %>
+      <% f.error_notification %>
+      <%= f.input :title, placeholder: 'Titre' %>
+      <%= f.input :start_date, placeholder: 'Date de début du spectacle' %>
+      <%= f.input :end_date, placeholder: 'Date de fin du spectacle' %>
+      <%= f.input :synopsys, placeholder: 'synopsis' %>
+      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,15 @@
 <h1>Admin::Actors#new</h1>
 <p>Find me in app/views/admin/actors/new.html.erb</p>
 
-<% raise %>
+<div class="container">
+  <div class="wrapper">
+    <%= simple_form_for @actor, :url => admin_actors_path do |f| %>
+      <% f.error_notification %>
+      <%= f.input :first_name, placeholder: 'Prénom' %>
+      <%= f.input :last_name, placeholder: 'Nom' %>
+      <%= f.input :birthday, placeholder: 'Date de naissance' %>
+      <%= f.input :gender, placeholder: 'Sexe' %>
+      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+    <% end %>
+  </div>
+</div>

@@ -1,13 +1,14 @@
 <div class="container">
   <div class="wrapper">
     <ul>
+      <li><%= link_to 'Ajouter une acteur', new_admin_actor_path %></li>
       <% @actors.each do |actor| %>
         <div class="card">
           <ul class='list-unstyled list-inline'>
             <li><%= actor.first_name %></li>
             <li><%= link_to 'show', play_path(actor) %></li>
             <li><%= link_to 'edit', edit_admin_actor_path(actor) %></li>
-            <li><%= link_to 'delete', admin_actor_path(actor),method: :destroy, data: { confirm: 'Are you sure?' } %></li>
+            <li><%= link_to 'delete', { action: :destroy, id: actor.id }, method: :delete, data: { confirm: 'Are you sure?' } %></li>
           </ul>
         </div>
       <% end %>

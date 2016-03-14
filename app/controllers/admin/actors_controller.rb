@@ -13,6 +13,9 @@ class Admin::ActorsController < ApplicationController
 
   def create
     @actor = Actor.new(actor_params)
+    @actor.save
+
+    redirect_to admin_actors_path
   end
 
   def update
@@ -24,6 +27,7 @@ class Admin::ActorsController < ApplicationController
   def destroy
     set_actor
     @actor.destroy
+    redirect_to admin_actors_path
   end
 
   private
