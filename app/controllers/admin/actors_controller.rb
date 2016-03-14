@@ -5,6 +5,7 @@ class Admin::ActorsController < ApplicationController
 
   def new
     @actor = Actor.new
+    @array = Play.all.map { |p| p.title }
   end
 
   def edit
@@ -13,6 +14,8 @@ class Admin::ActorsController < ApplicationController
 
   def create
     @actor = Actor.new(actor_params)
+    play = Play.where("title LIKE ?", params[:actor][:play_title])
+    @actor.play_id = play.first.id
     @actor.save
 
     redirect_to admin_actors_path
@@ -37,6 +40,7 @@ class Admin::ActorsController < ApplicationController
   end
 
   def actor_params
-    params.require(:actor).permit(:first_name, :last_name, :birthday, :gender)
+    params.require(:actor).permit(:first_name, :last_name, :birthday, :gender, :play_title)
   end
+
 end

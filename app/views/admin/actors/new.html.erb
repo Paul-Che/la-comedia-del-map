@@ -6,6 +6,7 @@
       <%= f.input :last_name, placeholder: 'Nom' %>
       <%= f.input :birthday, placeholder: 'Date de naissance' %>
       <%= f.input :gender, placeholder: 'Sexe' %>
+      <%= f.input :play_title, collection: @array %>
       <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
     <% end %>
   </div>
