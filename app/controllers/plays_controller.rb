@@ -1,6 +1,6 @@
 class PlaysController < ApplicationController
 
   def show
-    @play = Play.find(params[:id])
+    @play = Actor.find(params[:id]).play
   end
 end
