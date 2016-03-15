@@ -1,5 +1,4 @@
 class TicketsController < ApplicationController
-before_action :find_play, only: [ :new, :create ]
 
   def new
     @ticket = Ticket.new
@@ -8,15 +7,17 @@ before_action :find_play, only: [ :new, :create ]
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.client = current_user
+    @ticket.play_id = Play.where(title: @ticket.name_show).first.id
+    @ticket.save
+
+    redirect_to root_path
   end
 
   private
 
   def ticket_params
-    params.require(:ticket).permit.(:name_show, :date)
+    params.require(:ticket).permit(:name_show, :date)
   end
 
-  def find_play
-    @play = Play.find(params[:play_id])
-  end
 end

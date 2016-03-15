@@ -1,6 +1,6 @@
 <div class="container">
   <div class="wrapper">
-    <%= simple_form_for @ticket, :url => tickets_create_path do |f| %>
+    <%= simple_form_for @ticket, :url => tickets_path do |f| %>
       <% f.error_notification %>
       <%= f.input :name_show, collection: @array %>
       <%= f.input :date, placeholder: 'date' %>
