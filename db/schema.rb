@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315142133) do
+ActiveRecord::Schema.define(version: 20160315144059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160315142133) do
     t.datetime "updated_at", null: false
     t.string   "title"
   end
+
+  create_table "theater_plays", force: :cascade do |t|
+    t.integer  "play_id"
+    t.integer  "theater_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "theater_plays", ["play_id"], name: "index_theater_plays_on_play_id", using: :btree
+  add_index "theater_plays", ["theater_id"], name: "index_theater_plays_on_theater_id", using: :btree
 
   create_table "theaters", force: :cascade do |t|
     t.string   "name"
@@ -66,5 +76,7 @@ ActiveRecord::Schema.define(version: 20160315142133) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "theater_plays", "plays"
+  add_foreign_key "theater_plays", "theaters"
   add_foreign_key "theaters", "plays"
 end
