@@ -1,5 +1,6 @@
 class Play < ActiveRecord::Base
   has_many :actors
+  has_many :theater
 
   # Validations
   validates :start_date, presence: true

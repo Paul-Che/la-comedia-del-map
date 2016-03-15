@@ -4,6 +4,5 @@ class Actor < ActiveRecord::Base
   # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
-
-  validates :play_title, presence: true
+  # validates :play_title, presence: true
 end
