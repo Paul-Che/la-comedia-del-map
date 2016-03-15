@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="wrapper">
+    <%= simple_form_for @ticket, :url => tickets_create_path do |f| %>
+      <% f.error_notification %>
+      <%= f.input :name_show, collection: @array %>
+      <%= f.input :date, placeholder: 'date' %>
+      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+    <% end %>
+  </div>
+</div>
