@@ -2,6 +2,7 @@ class Play < ActiveRecord::Base
   has_many :actors
   has_many :theater_plays
   has_many :theaters, through: :theater_plays
+  has_many :tickets
 
   # Validations
   validates :start_date, presence: true
