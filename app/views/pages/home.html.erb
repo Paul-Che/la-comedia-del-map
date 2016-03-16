@@ -12,6 +12,7 @@
           <% @plays.each do |play| %>
             <li>
               <%= link_to play.title, play_path(play) %>
+              <%= play.base_price %> EUR
             </li>
           <% end %>
           <%= link_to 'Acheter un ticket', new_ticket_path(@play) %>

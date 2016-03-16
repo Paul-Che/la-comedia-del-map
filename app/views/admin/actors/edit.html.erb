@@ -2,10 +2,11 @@
   <div class="wrapper">
     <%= simple_form_for @actor, :url => admin_actor_path do |f| %>
       <% f.error_notification %>
-      <%= f.input :first_name, placeholder: 'Prénom' %>
-      <%= f.input :last_name, placeholder: 'Nom' %>
-      <%= f.input :birthday, placeholder: 'Date de naissance' %>
-      <%= f.input :gender, placeholder: 'Sexe' %>
+      <%= f.input :first_name, label: "Prénom de l'acteur", placeholder: @actor.first_name %>
+      <%= f.input :last_name, label: "Nom de l'acteur", placeholder: @actor.last_name %>
+      <%= f.input :birthday, label: 'Date de naissance', placeholder: @actor.birthday %>
+      <%= f.input :gender, label: 'Sexe', placeholder: @actor.gender %>
+      <%= f.input :play_title, label: 'Titre du spectacle dans lequel joue l''acteur', collection: @array %>
       <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
     <% end %>
   </div>

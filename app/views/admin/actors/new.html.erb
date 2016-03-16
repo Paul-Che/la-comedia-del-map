@@ -2,11 +2,11 @@
   <div class="wrapper">
     <%= simple_form_for @actor, :url => admin_actors_path do |f| %>
       <% f.error_notification %>
-      <%= f.input :first_name, placeholder: 'Prénom' %>
-      <%= f.input :last_name, placeholder: 'Nom' %>
-      <%= f.input :birthday, placeholder: 'Date de naissance' %>
-      <%= f.input :gender, placeholder: 'Sexe' %>
-      <%= f.input :play_title, collection: @array %>
+      <%= f.input :first_name, label: 'Prénom du nouvel acteur', placeholder: 'Ajouter un prénom' %>
+      <%= f.input :last_name, label: 'Nom du nouvel acteur', placeholder: 'Ajouter un nom' %>
+      <%= f.input :birthday, label: 'Date de naissance', placeholder: 'Ajouter un date de naissance' %>
+      <%= f.input :gender, label: 'Sexe', placeholder: 'Homme ou Femme' %>
+      <%= f.input :play_title, label: 'Titre du spectacle dans lequel joue l''acteur', collection: @array %>
       <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
     <% end %>
   </div>

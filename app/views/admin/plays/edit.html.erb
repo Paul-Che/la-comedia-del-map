@@ -2,10 +2,11 @@
   <div class="wrapper">
     <%= simple_form_for @play, :url => admin_play_path do |f| %>
       <% f.error_notification %>
-      <%= f.input :title, placeholder: 'Titre' %>
-      <%= f.input :start_date, placeholder: 'Date de début du spectacle' %>
-      <%= f.input :end_date, placeholder: 'Date de fin du spectacle' %>
-      <%= f.input :synopsys, placeholder: 'synopsis' %>
+      <%= f.input :title, label: 'Titre du spectacle', placeholder: @play.title %>
+      <%= f.input :start_date, label: 'Date de début', input_html: { class: "form-control datepick" }, placeholder: @play.start_date , name: "start_date" %>
+      <%= f.input :end_date, label: 'Date de fin', input_html: { class: "form-control datepick" }, placeholder: @play.end_date , name: "end_date" %>
+      <%= f.input :synopsys, label: 'synopsis', placeholder: @play.synopsys %>
+      <%= f.input :base_price, label: 'Prix du spectacle', placeholder: @play.base_price %>EUR
       <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
     <% end %>
   </div>

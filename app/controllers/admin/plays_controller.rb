@@ -37,6 +37,6 @@ def index
   end
 
   def play_params
-    params.require(:play).permit(:start_date, :end_date, :title, :synopsys)
+    params.require(:play).permit(:start_date, :end_date, :title, :synopsys, :base_price)
   end
 end

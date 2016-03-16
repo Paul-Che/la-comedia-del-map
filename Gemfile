@@ -24,10 +24,14 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do
   gem 'rails_12factor'
+end
+
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
 end
