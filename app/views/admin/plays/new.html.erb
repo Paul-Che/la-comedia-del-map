@@ -1,13 +1,23 @@
 <div class="container">
-  <div class="wrapper">
-    <%= simple_form_for @play, :url => admin_plays_path do |f| %>
-      <% f.error_notification %>
-      <%= f.input :title, label: 'Titre du spectacle', placeholder: 'Titre' %>
-      <%= f.input :start_date, label: 'Date de début', input_html: { class: "form-control datepick" }, placeholder: "Selectionner une date de début", name: "start_date" %>
-      <%= f.input :end_date, label: 'Date de fin', input_html: { class: "form-control datepick" }, placeholder: "Selectionner une date de fin", name: "end_date" %>
-      <%= f.input :synopsys, label: 'synopsis', placeholder: 'Ecrivez un résumé du spectacle' %>
-      <%= f.input :base_price, label: 'Prix du spectacle', placeholder: 'Entrez un prix en euro' %>EUR
-      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
-    <% end %>
+  <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="form-design background">
+      <div class="text-center" id="form_title">
+        <h2>Ajouter une nouvelle pièce</h2>
+      </div>
+        <div class="form-inputs">
+          <%= simple_form_for @play, :url => admin_plays_path do |f| %>
+            <% f.error_notification %>
+            <%= f.input :title, label: 'Titre du spectacle', placeholder: 'Titre' %>
+            <%= f.input :start_date, label: 'Date de début', input_html: { class: "form-control datepick" }, placeholder: "Selectionner une date de début", name: "start_date" %>
+            <%= f.input :end_date, label: 'Date de fin', input_html: { class: "form-control datepick" }, placeholder: "Selectionner une date de fin", name: "end_date" %>
+            <%= f.input :synopsys, label: 'synopsis', placeholder: 'Ecrivez un résumé du spectacle' %>
+            <%= f.input :base_price, label: 'Prix du spectacle', placeholder: 'Entrez un prix en euro' %>EUR
+        </div>
+        <div class="form-actions text-center">
+            <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>
+

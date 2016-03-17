@@ -1,10 +1,20 @@
 <div class="container">
-  <div class="wrapper">
-    <%= simple_form_for @ticket, :url => tickets_path do |f| %>
-      <% f.error_notification %>
-      <%= f.input :name_show, collection: @array %>
-      <%= f.input :date, placeholder: 'date' %>
-      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
-    <% end %>
+  <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="form-design background">
+      <div class="text-center" id="form_title">
+        <h2>Acheter un ticket</h2>
+      </div>
+        <div class="form-inputs">
+          <%= simple_form_for @ticket, :url => tickets_path do |f| %>
+            <% f.error_notification %>
+            <%= f.input :name_show, label: 'Choisissez la pièce :', collection: @array %>
+            <%= f.input :date, label: 'Choisissez la date du spectacle :', placeholder: 'date' %>
+        </div>
+        <div class="form-actions text-center">
+            <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>
+

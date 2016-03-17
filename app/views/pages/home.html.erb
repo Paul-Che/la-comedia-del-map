@@ -5,23 +5,29 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <div class="on-air">
-        <h4>A l'affiche</h4>
-        <ul class='list-unstyled'>
-          <% @plays.each do |play| %>
-            <li>
-              <%= link_to play.title, play_path(play) %>
-              <%= play.base_price %> EUR
-            </li>
-          <% end %>
-          <%= link_to 'Acheter un ticket', new_ticket_path(@play) %>
-        </ul>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-design background">
+        <div class="text-center" id="form_title">
+          <h4>A l'affiche</h4>
+        </div>
+          <div class="form-inputs">
+            <% @plays.each do |play| %>
+              <li>
+                <%= link_to play.title, play_path(play) %>
+                <em>(<%= play.base_price %> EUR)</em>
+              </li>
+            <% end %>
+          </div>
+          <div class="form-actions text-center">
+            <%= link_to 'Acheter un ticket', new_ticket_path(@play), class: "btn btn-primary", style: "margin: 50px" %>
+          </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="top">
-        <h6>Les meilleurs du moments</h6>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-design background">
+        <div class="text-center" id="form_title">
+          <h4>Les meilleurs du moment</h4>
+        </div>
       </div>
     </div>
   </div>

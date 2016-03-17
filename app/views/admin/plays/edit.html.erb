@@ -1,13 +1,22 @@
 <div class="container">
-  <div class="wrapper">
-    <%= simple_form_for @play, :url => admin_play_path do |f| %>
-      <% f.error_notification %>
-      <%= f.input :title, label: 'Titre du spectacle', placeholder: @play.title %>
-      <%= f.input :start_date, label: 'Date de début', input_html: { class: "form-control datepick" }, placeholder: @play.start_date , name: "start_date" %>
-      <%= f.input :end_date, label: 'Date de fin', input_html: { class: "form-control datepick" }, placeholder: @play.end_date , name: "end_date" %>
-      <%= f.input :synopsys, label: 'synopsis', placeholder: @play.synopsys %>
-      <%= f.input :base_price, label: 'Prix du spectacle', placeholder: @play.base_price %>EUR
-      <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
-    <% end %>
+  <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="form-design background">
+      <div class="text-center" id="form_title">
+        <h2>Modifier les données de la pièce</h2>
+      </div>
+        <div class="form-inputs">
+          <%= simple_form_for @play, :url => admin_play_path do |f| %>
+            <% f.error_notification %>
+            <%= f.input :title, label: 'Titre du spectacle', placeholder: @play.title %>
+            <%= f.input :start_date, label: 'Date de début', input_html: { class: "form-control datepick" }, placeholder: @play.start_date , name: "start_date" %>
+            <%= f.input :end_date, label: 'Date de fin', input_html: { class: "form-control datepick" }, placeholder: @play.end_date , name: "end_date" %>
+            <%= f.input :synopsys, label: 'synopsis', placeholder: @play.synopsys %>
+            <%= f.input :base_price, label: 'Prix du spectacle', placeholder: @play.base_price %>EUR
+        </div>
+        <div class="form-actions text-center">
+            <%= f.button :submit, 'Enregistrer', :class => "btn btn-primary", :style => "margin: 50px" %>
+          <% end %>
+        </div>
+    </div>
   </div>
 </div>

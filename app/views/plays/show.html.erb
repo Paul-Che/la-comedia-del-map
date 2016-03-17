@@ -1,20 +1,29 @@
 <div class="container">
-  <div class="wrapper">
-    <ul>
-      <div class="card">
-        <ul class='list-unstyled'>
-          <li>Titre : <%= @play.title %></li>
-          <li>Date : Du <%= @play.start_date %> au <%= @play.end_date %></li>
-          <li>Résumé : <%= @play.synopsys %></li>
-          <li>Liste des acteurs : </li>
-        </ul>
-        <% @play.actors.each do |actor| %>
-          <ul class='list-unstyled list-inline'>
-            <li><%= actor.first_name %></li>
-            <li><%= actor.last_name %></li>
-          </ul>
-        <% end %>
+  <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="form-design background">
+      <div class="text-center padding-bot" id="form_title">
+        <h3><%= @play.title %></h3>
       </div>
-    </ul>
+        <div class="form-inputs">
+          <ul>
+            <div class="card">
+              <ul class='list-unstyled'>
+                <li><p>Date : Du <strong><%= @play.start_date %></strong> au <strong><%= @play.end_date %></strong></p></li>
+                <li><p>Résumé : <%= @play.synopsys %></p></li>
+                <li><p>Liste des acteurs : </p></li>
+              </ul>
+              <% @play.actors.each do |actor| %>
+                <ul class='list-unstyled list-inline'>
+                  <li><p><%= actor.first_name %></p></li>
+                  <li><p><%= actor.last_name %></p></li>
+                </ul>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+        <div class="form-actions text-center">
+          <%= link_to 'Retour', root_path, class: "btn btn-primary", style: "margin: 50px" %>
+        </div>
+    </div>
   </div>
 </div>
