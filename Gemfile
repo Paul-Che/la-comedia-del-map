@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -35,3 +36,5 @@ end
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
 end
+
+gem "letter_opener", group: :development

@@ -1,16 +1,23 @@
 <div class="container">
-  <div class="wrapper">
-    <ul>
-      <% @tickets.each do |ticket| %>
-        <div class="card">
-          <ul class='list-unstyled list-inline'>
-            <li><%= ticket.name_show %></li>
-            <li><%= ticket.price %></li>
-            <li><%= ticket.date %></li>
-            <li><%= ticket.client %></li>
-          </ul>
-        </div>
-      <% end %>
-    </ul>
+  <div class="row col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="form-design background">
+      <div class="text-center" id="form_title">
+        <h2>Liste des tickets achetés</h2>
+      </div>
+      <div class="form-inputs">
+       <ul>
+         <% @tickets.each do |ticket| %>
+           <div class="card">
+             <ul class='list-unstyled list-inline'>
+               <li>Nom de la pièce : <%= ticket.name_show %> <em>(<%= ticket.price %> EUR)</em></li>
+               <li>Date du spectacle : <%= ticket.date %></li>
+               <li>Acheteur : <%= ticket.client %></li>
+             </ul>
+           </div>
+         <% end %>
+       </ul>
+      </div>
+    </div>
   </div>
 </div>
+
